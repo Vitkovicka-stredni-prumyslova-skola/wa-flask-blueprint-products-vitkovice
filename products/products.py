@@ -11,8 +11,8 @@ def index():
     
     return render_template('products/products.html', length = l, products = data)
 
-@products_bp.route('/products/detail')
-def detailOfProduct():
-    data = GetSingleProducts(1)
+@products_bp.route('/products/<int:id>')
+def detailOfProduct(id):
+    data = GetSingleProducts(id)
 
     return render_template('products/detail.html', detailOfPorduct = data)
